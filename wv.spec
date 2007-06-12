@@ -1,7 +1,7 @@
 %define name wv
 %define version 1.2.4
 %define real_version %version
-%define release %mkrel 2
+%define release %mkrel 3
 %define serial 1
 
 %define api_version 1.2

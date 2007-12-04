@@ -17,7 +17,7 @@ License: GPL
 Group: Office
 URL: http://sourceforge.net/projects/wvware/
 Source: http://prdownloads.sourceforge.net/wvware/%{name}-%{real_version}.tar.bz2
-BuildRequires: XFree86-devel
+BuildRequires: X11-devel
 BuildRequires: glib2-devel
 BuildRequires: libwmf-devel >= 0.2.8
 BuildRequires: libjpeg-devel

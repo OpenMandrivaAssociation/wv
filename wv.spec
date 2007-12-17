@@ -24,7 +24,6 @@ BuildRequires: libjpeg-devel
 BuildRequires: libpng-devel 
 BuildRequires: libxml2-devel
 BuildRequires: libgsf-devel
-BuildRoot: %{_tmppath}/%{name}-buildroot
 Obsoletes: mswordview 
 Provides: mswordview
 Requires: tetex-latex

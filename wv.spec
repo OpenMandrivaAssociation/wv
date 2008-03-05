@@ -1,7 +1,6 @@
 %define name wv
 %define version 1.2.4
 %define real_version %version
-%define release %mkrel 3
 %define serial 1
 
 %define api_version 1.2
@@ -11,7 +10,7 @@
 Summary: MSWord 6/7/8/9 binary file format -> HTML converter
 Name: %{name}
 Version: %{version}
-Release: %{release}
+Release: %mkrel 4
 Epoch: %{serial}
 License: GPL
 Group: Office

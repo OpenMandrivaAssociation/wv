@@ -12,10 +12,11 @@ Name: %{name}
 Version: %{version}
 Release: %mkrel 5
 Epoch: %{serial}
-License: GPL
+License: GPLv2
 Group: Office
 URL: http://sourceforge.net/projects/wvware/
 Source: http://prdownloads.sourceforge.net/wvware/%{name}-%{real_version}.tar.bz2
+Patch0: %{name}-1.2.4-fix-str-fmt.patch
 BuildRequires: X11-devel
 BuildRequires: glib2-devel
 BuildRequires: libwmf-devel >= 0.2.8
@@ -61,6 +62,7 @@ This is the development package.
 
 %prep
 %setup -q -n %{name}-%{version}
+%patch0 -p1 -b .strfmt
 
 %build
 CFLAGS="$RPM_OPT_FLAGS" %configure2_5x --with-Magick=/usr/X11R6/include/X11/magick --with-libwmf=/usr --with-expat=/usr --prefix=/usr

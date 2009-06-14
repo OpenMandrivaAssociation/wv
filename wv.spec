@@ -10,13 +10,14 @@
 Summary: MSWord 6/7/8/9 binary file format -> HTML converter
 Name: %{name}
 Version: %{version}
-Release: %mkrel 7
+Release: %mkrel 8
 Epoch: %{serial}
 License: GPLv2
 Group: Office
 URL: http://sourceforge.net/projects/wvware/
 Source: http://prdownloads.sourceforge.net/wvware/%{name}-%{real_version}.tar.bz2
 Patch0: %{name}-1.2.4-fix-str-fmt.patch
+Patch1: wv-1.2.4-linkage.patch
 BuildRequires: X11-devel
 BuildRequires: glib2-devel
 BuildRequires: libwmf-devel >= 0.2.8
@@ -52,7 +53,6 @@ Summary: MSWord 6/7/8/9 binary file format -> HTML converter (development)
 Group: Development/C
 Requires: %{lib_name} = %{serial}:%{version}
 Provides: %{name}-devel = %{serial}:%{version}
-Requires: libwmf-devel
 
 %description -n %{lib_name}-devel
 Wv is a program that understands the Microsoft Word 6/7/8/9
@@ -64,17 +64,15 @@ This is the development package.
 %prep
 %setup -q -n %{name}-%{version}
 %patch0 -p1 -b .strfmt
+%patch1 -p0 -b .linkage
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" %configure2_5x --with-Magick=/usr/X11R6/include/X11/magick --with-libwmf=/usr --with-expat=/usr --prefix=/usr
-make
-# uglly hack to remove CVS directory here!
-rm -rf `find . -type d -a -name CVS`
+%configure2_5x
+%make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-# manonedir is set to /usr/man/man1, reset it
-%makeinstall manonedir=$RPM_BUILD_ROOT/%{_mandir}/man1
+%makeinstall_std
 # uggly fix for symlink /usr/bin/wvText to wvConvert.
 ln -sf wvConvert $RPM_BUILD_ROOT/%{_bindir}/wvText
 # the following file seems not to be used by any wv executable.
@@ -118,5 +116,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root)      %{_libdir}/libwv.so
 %attr(644,root,root)      %{_libdir}/libwv.*a
 %attr(644,root,root)      %{_libdir}/pkgconfig/wv-1.0.pc
-
-

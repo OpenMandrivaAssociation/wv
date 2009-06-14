@@ -10,7 +10,7 @@
 Summary: MSWord 6/7/8/9 binary file format -> HTML converter
 Name: %{name}
 Version: %{version}
-Release: %mkrel 6
+Release: %mkrel 7
 Epoch: %{serial}
 License: GPLv2
 Group: Office
@@ -52,6 +52,7 @@ Summary: MSWord 6/7/8/9 binary file format -> HTML converter (development)
 Group: Development/C
 Requires: %{lib_name} = %{serial}:%{version}
 Provides: %{name}-devel = %{serial}:%{version}
+Requires: libwmf-devel
 
 %description -n %{lib_name}-devel
 Wv is a program that understands the Microsoft Word 6/7/8/9

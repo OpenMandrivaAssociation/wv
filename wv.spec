@@ -10,7 +10,7 @@
 Summary: MSWord 6/7/8/9 binary file format -> HTML converter
 Name: %{name}
 Version: %{version}
-Release: %mkrel 9
+Release: %mkrel 10
 Epoch: %{serial}
 License: GPLv2
 Group: Office

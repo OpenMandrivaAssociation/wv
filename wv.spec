@@ -18,13 +18,10 @@ URL: http://sourceforge.net/projects/wvware/
 Source: http://prdownloads.sourceforge.net/wvware/%{name}-%{real_version}.tar.bz2
 Patch0: %{name}-1.2.4-fix-str-fmt.patch
 Patch1: wv-1.2.4-linkage.patch
-BuildRequires: X11-devel
 BuildRequires: glib2-devel
-BuildRequires: libwmf-devel >= 0.2.8
-BuildRequires: libjpeg-devel
-BuildRequires: libpng-devel 
-BuildRequires: libxml2-devel
 BuildRequires: libgsf-devel
+BuildRequires: libxml2-devel
+Buildrequires: zlib-devel
 BuildRoot: %{_tmppath}/%{name}-buildroot
 Obsoletes: mswordview 
 Provides: mswordview

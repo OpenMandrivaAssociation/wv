@@ -1,23 +1,22 @@
 %define name wv
-%define version 1.2.4
+%define version 1.2.9
 %define real_version %version
 %define serial 1
 
 %define api_version 1.2
-%define lib_major   3
-%define lib_name    %mklibname %{name}- %{api_version} %{lib_major}
+%define lib_major   4
+%define lib_name    %mklibname %{name} %{api_version} %{lib_major}
 
 Summary: MSWord 6/7/8/9 binary file format -> HTML converter
 Name: %{name}
 Version: %{version}
-Release: %mkrel 10
+Release: %mkrel 1
 Epoch: %{serial}
 License: GPLv2
 Group: Office
-URL: http://sourceforge.net/projects/wvware/
-Source: http://prdownloads.sourceforge.net/wvware/%{name}-%{real_version}.tar.bz2
+URL: http://www.abisource.com/downloads/wv/
+Source: http://www.abisource.com/downloads/wv/%{version}/wv-%{version}.tar.gz
 Patch0: %{name}-1.2.4-fix-str-fmt.patch
-Patch1: wv-1.2.4-linkage.patch
 BuildRequires: glib2-devel
 BuildRequires: libgsf-devel
 BuildRequires: libxml2-devel
@@ -61,7 +60,6 @@ This is the development package.
 %prep
 %setup -q -n %{name}-%{version}
 %patch0 -p1 -b .strfmt
-%patch1 -p0 -b .linkage
 
 %build
 %configure2_5x

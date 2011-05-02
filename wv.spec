@@ -6,6 +6,7 @@
 %define api_version 1.2
 %define lib_major   4
 %define lib_name    %mklibname %{name} %{api_version} %{lib_major}
+%define develname   %mklibname -d %name
 
 Summary: MSWord 6/7/8/9 binary file format -> HTML converter
 Name: %{name}
@@ -44,13 +45,15 @@ documents into HTML, which can then be read with a browser.
 
 This package provides the library that is used by wv.
 
-%package -n %{lib_name}-devel
+%package -n %{develname}
 Summary: MSWord 6/7/8/9 binary file format -> HTML converter (development)
 Group: Development/C
 Requires: %{lib_name} = %{serial}:%{version}
 Provides: %{name}-devel = %{serial}:%{version}
+Obsoletes: %{_lib}wv-1.2_3-devel
+Obsoletes: %{_lib}wv-1.2_4-devel
 
-%description -n %{lib_name}-devel
+%description -n %{develname}
 Wv is a program that understands the Microsoft Word 6/7/8/9
 binary file format and is able to convert Word
 documents into HTML, which can then be read with a browser.
@@ -104,7 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %attr(755,root,root)      %{_libdir}/libwv-%{api_version}.so.%{lib_major}*
 
-%files -n %{lib_name}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %attr(755,root,root) %dir %{_includedir}/wv
 %attr(644,root,root)      %{_includedir}/wv/*.h

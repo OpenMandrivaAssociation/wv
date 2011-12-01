@@ -74,7 +74,7 @@ rm -rf %{buildroot}
 # uggly fix for symlink /usr/bin/wvText to wvConvert.
 ln -sf wvConvert %{buildroot}/%{_bindir}/wvText
 # the following file seems not to be used by any wv executable.
-#cp $RPM_BUILD_DIR/%{name}/config-mswordview %{buildroot}/usr/lib/mswordview
+#cp %{_builddir}/%{name}/config-mswordview %{buildroot}/usr/lib/mswordview
 rm -f notes/decompress/a.out
 # make sure libwv.a is in lib directory
 # mv %{buildroot}%{_datadir}/libwv.a %{buildroot}%{_libdir}/libwv.a

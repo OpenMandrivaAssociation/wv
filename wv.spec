@@ -69,15 +69,15 @@ This is the development package.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 # uggly fix for symlink /usr/bin/wvText to wvConvert.
-ln -sf wvConvert $RPM_BUILD_ROOT/%{_bindir}/wvText
+ln -sf wvConvert %{buildroot}/%{_bindir}/wvText
 # the following file seems not to be used by any wv executable.
-#cp $RPM_BUILD_DIR/%{name}/config-mswordview $RPM_BUILD_ROOT/usr/lib/mswordview
+#cp $RPM_BUILD_DIR/%{name}/config-mswordview %{buildroot}/usr/lib/mswordview
 rm -f notes/decompress/a.out
 # make sure libwv.a is in lib directory
-# mv $RPM_BUILD_ROOT%{_datadir}/libwv.a $RPM_BUILD_ROOT%{_libdir}/libwv.a
+# mv %{buildroot}%{_datadir}/libwv.a %{buildroot}%{_libdir}/libwv.a
 
 %if %mdkversion < 200900
 %post -n %{lib_name} -p /sbin/ldconfig
@@ -88,7 +88,7 @@ rm -f notes/decompress/a.out
 %endif
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)

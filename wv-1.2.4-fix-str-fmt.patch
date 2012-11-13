@@ -1,0 +1,12 @@
+diff -uNr wv-1.2.4.ori/wvRTF.c wv-1.2.4/wvRTF.c
+--- wv-1.2.4.ori/wvRTF.c	2009-05-21 05:45:45.000000000 +0200
++++ wv-1.2.4/wvRTF.c	2009-05-21 05:51:26.000000000 +0200
+@@ -192,7 +192,7 @@
+     rtf_output_char ('{');
+ 
+     /* font color */
+-    rtf_output (rtfColors[ud->cCol]);
++    rtf_output ("%s", rtfColors[ud->cCol]);
+ 
+     /* font face */
+     rtf_output ("\\f%d", ud->cFont);

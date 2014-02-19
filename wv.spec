@@ -18,7 +18,7 @@ Group: Office
 URL: http://www.abisource.com/downloads/wv/
 Source: http://www.abisource.com/downloads/wv/%{version}/wv-%{version}.tar.gz
 Patch0: %{name}-1.2.4-fix-str-fmt.patch
-BuildRequires: glib2-devel
+BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: libgsf-devel
 BuildRequires: libxml2-devel
 Buildrequires: zlib-devel
@@ -142,7 +142,7 @@ rm -rf $RPM_BUILD_ROOT
 + Revision: 385828
 - requires wmf for *.la
 
-* Thu May 21 2009 Jérôme Brenier <incubusss@mandriva.org> 1:1.2.4-6mdv2010.0
+* Thu May 21 2009 JÃ©rÃ´me Brenier <incubusss@mandriva.org> 1:1.2.4-6mdv2010.0
 + Revision: 378384
 - fix str fmt (1 patch added)
 - fix license
@@ -170,29 +170,29 @@ rm -rf $RPM_BUILD_ROOT
 - rebuild for expat
 
 
-* Mon Jan 29 2007 Götz Waschk <waschk@mandriva.org> 1.2.4-2mdv2007.0
+* Mon Jan 29 2007 GÃ¶tz Waschk <waschk@mandriva.org> 1.2.4-2mdv2007.0
 + Revision: 115126
 - fix major
 - drop disabled patches
 
-* Sun Jan 28 2007 Jérôme Soyer <saispo@mandriva.org> 1:1.2.4-1mdv2007.1
+* Sun Jan 28 2007 JÃ©rÃ´me Soyer <saispo@mandriva.org> 1:1.2.4-1mdv2007.1
 + Revision: 114726
 - New release 1.2.4
 - Import wv
 
-* Thu Jun 22 2006 Götz Waschk <waschk@mandriva.org> 1:1.2.0-5mdv2007.1
+* Thu Jun 22 2006 GÃ¶tz Waschk <waschk@mandriva.org> 1:1.2.0-5mdv2007.1
 - Rebuild
 
-* Wed Jun 21 2006 Götz Waschk <waschk@mandriva.org> 1:1.2.0-5mdk
+* Wed Jun 21 2006 GÃ¶tz Waschk <waschk@mandriva.org> 1:1.2.0-5mdk
 - Rebuild
 
-* Tue Mar 07 2006 Götz Waschk <waschk@mandriva.org> 1.2.0-4mdk
+* Tue Mar 07 2006 GÃ¶tz Waschk <waschk@mandriva.org> 1.2.0-4mdk
 - rebuild with new libgsf
 
-* Wed Oct 19 2005 G�tz Waschk <waschk@mandriva.org> 1.2.0-3mdk
+* Wed Oct 19 2005 Götz Waschk <waschk@mandriva.org> 1.2.0-3mdk
 - fix buildrequires
 
-* Tue Oct 18 2005 G�tz Waschk <waschk@mandriva.org> 1.2.0-2mdk
+* Tue Oct 18 2005 Götz Waschk <waschk@mandriva.org> 1.2.0-2mdk
 - fix buildrequires
 
 * Tue Oct 18 2005 Marcel Pol <mpol@mandrake.org> 1.2.0-1mdk
@@ -202,13 +202,13 @@ rm -rf $RPM_BUILD_ROOT
 - drop P0, changes upstream
 - drop P1, afaik it didn't apply anymore anyway
 
-* Sun Sep 18 2005 G�tz Waschk <waschk@mandriva.org> 1.0.3-3mdk
+* Sun Sep 18 2005 Götz Waschk <waschk@mandriva.org> 1.0.3-3mdk
 - open ole2 files read only
 
-* Tue Jun 14 2005 G�tz Waschk <waschk@mandriva.org> 1.0.3-2mdk
+* Tue Jun 14 2005 Götz Waschk <waschk@mandriva.org> 1.0.3-2mdk
 - major 3
 
-* Tue Jun 14 2005 G�tz Waschk <waschk@mandriva.org> 1.0.3-1mdk
+* Tue Jun 14 2005 Götz Waschk <waschk@mandriva.org> 1.0.3-1mdk
 - fix source URL
 - New release 1.0.3
 

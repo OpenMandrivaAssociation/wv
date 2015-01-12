@@ -59,6 +59,7 @@ This is the development package.
 %patch0 -p1 -b .strfmt
 
 %build
+./autogen.sh
 %configure
 %make
 

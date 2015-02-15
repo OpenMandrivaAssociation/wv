@@ -42,7 +42,7 @@ This package provides the library that is used by wv.
 %package -n %{develname}
 Summary:	MSWord 6/7/8/9 binary file format -> HTML converter (development)
 Group:		Development/C
-Requires:	%{lib_name} = %{EVRD}}
+Requires:	%{lib_name} = %{EVRD}
 Provides:	%{name}-devel = %{EVRD}
 Obsoletes:	%{_lib}wv-1.2_3-devel < %{EVRD}
 Obsoletes:	%{_lib}wv-1.2_4-devel < %{EVRD}

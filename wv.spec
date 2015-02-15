@@ -54,12 +54,11 @@ documents into HTML, which can then be read with a browser.
 
 This is the development package.
 
-%prep1
+%prep
 %setup -q
 %patch0 -p1 -b .strfmt
 
 %build
-./autogen.sh
 %configure
 %make
 
@@ -93,5 +92,4 @@ rm -f notes/decompress/a.out
 %attr(755,root,root) %dir %{_includedir}/wv
 %attr(644,root,root) %{_includedir}/wv/*.h
 %attr(755,root,root) %{_libdir}/libwv.so
-%attr(644,root,root) %{_libdir}/libwv.*a
 %attr(644,root,root) %{_libdir}/pkgconfig/wv-1.0.pc

@@ -6,7 +6,7 @@
 Summary:	MSWord 6/7/8/9 binary file format -> HTML converter
 Name:		wv
 Version:	1.2.9
-Release:	12
+Release:	13
 Epoch:		1
 License:	GPLv2
 Group:		Office

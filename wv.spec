@@ -2,6 +2,8 @@
 %define lib_major 4
 %define lib_name %mklibname %{name} %{api_version} %{lib_major}
 %define develname %mklibname -d %name
+%define _disable_lto 1
+%define _disable_rebuild_configure 1
 
 Summary:	MSWord 6/7/8/9 binary file format -> HTML converter
 Name:		wv

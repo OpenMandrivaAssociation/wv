@@ -12,7 +12,7 @@ Release:	16
 Epoch:		1
 License:	GPLv2
 Group:		Office
-URL:		http://www.abisource.com/downloads/wv/
+URL:		https://www.abisource.com/downloads/wv/
 Source:		http://www.abisource.com/downloads/wv/%{version}/wv-%{version}.tar.gz
 Patch0: 	%{name}-1.2.4-fix-str-fmt.patch
 BuildRequires:	pkgconfig(glib-2.0)

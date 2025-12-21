@@ -15,6 +15,11 @@ Group:		Office
 URL:		https://www.abisource.com/downloads/wv/
 Source:		http://www.abisource.com/downloads/wv/%{version}/wv-%{version}.tar.gz
 Patch0: 	%{name}-1.2.4-fix-str-fmt.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	libgsf-devel
 BuildRequires:	libxml2-devel

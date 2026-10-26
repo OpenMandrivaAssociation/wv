@@ -4,6 +4,8 @@
 %define develname %mklibname -d %name
 %define _disable_lto 1
 %define _disable_rebuild_configure 1
+# libxml2 SAX callbacks take unsigned char. The types match at runtime.
+%global optflags %{optflags} -Wno-incompatible-function-pointer-types
 
 Summary:	MSWord 6/7/8/9 binary file format -> HTML converter
 Name:		wv
@@ -67,6 +69,8 @@ This is the development package.
 
 %build
 %configure
+# Upstream appends -ansi, which hides the prototypes in current libgsf headers.
+find . -name Makefile -o -name GNUmakefile | xargs sed -i 's/ -ansi//g'
 %make
 
 %install

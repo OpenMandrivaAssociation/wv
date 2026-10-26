@@ -63,7 +63,7 @@ This is the development package.
 
 %prep
 %setup -q
-%patch0 -p1 -b .strfmt
+%patch 0 -p1 -b .strfmt
 
 %build
 %configure

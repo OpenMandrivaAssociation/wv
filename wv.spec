@@ -24,7 +24,7 @@ BuildRequires:	slibtool
 BuildRequires:	make
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	libgsf-devel
-BuildRequires:	libxml2-devel
+BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	zlib-devel
 Obsoletes:	mswordview < %{EVRD}
 Provides:	mswordview = %{EVRD}
@@ -66,6 +66,8 @@ This is the development package.
 %prep
 %setup -q
 %patch 0 -p1 -b .strfmt
+# gsf_doc_prop_get_val() is declared here. Without it clang treats the call as returning int.
+sed -i '/#include <gsf\/gsf-meta-names.h>/a #include <gsf/gsf-doc-meta-data.h>' wvSummary.c
 
 %build
 %configure

@@ -28,8 +28,8 @@ BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	zlib-devel
 Obsoletes:	mswordview < %{EVRD}
 Provides:	mswordview = %{EVRD}
-Requires:	tetex-latex
-Requires:	tetex-dvips
+# wvLatex and wvPS call latex and dvips. Cooker has no tetex packages,
+# so those scripts are not a hard dependency of the converter.
 
 %description
 Wv is a program that understands the Microsoft Word 6/7/8/9

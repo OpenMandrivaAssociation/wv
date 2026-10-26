@@ -5,7 +5,7 @@
 %define _disable_lto 1
 %define _disable_rebuild_configure 1
 # libxml2 SAX callbacks take unsigned char. The types match at runtime.
-%global optflags %{optflags} -Wno-incompatible-function-pointer-types
+%global optflags %{optflags} -Wno-incompatible-function-pointer-types -Wno-implicit-function-declaration
 
 Summary:	MSWord 6/7/8/9 binary file format -> HTML converter
 Name:		wv
